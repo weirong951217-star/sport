@@ -413,7 +413,7 @@ SPORTS_HTML_TEMPLATE = """
     <title>YuanZe IEM - Sports Analysis</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
-        body { font-family: 'Helvetica Neue', 'Inter', 'Noto Sans TC', sans-serif; background-color: #fbfbfb; color: #111; }
+        body { font-family: 'Helvetica Neue', 'Inter', 'Noto Sans TC', sans-serif; background: linear-gradient(135deg, #f6f9fc 0%, #f1f5f9 50%, #e2e8f0 100%); background-attachment: fixed; color: #111; }
         .progress-bar-transition { transition: width 1.5s cubic-bezier(0.4, 0, 0.2, 1); }
         .no-scrollbar::-webkit-scrollbar { display: none; }
         .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
@@ -527,19 +527,16 @@ SPORTS_HTML_TEMPLATE = """
                 <div class="mb-4 bg-gray-50 p-4 rounded-2xl border border-gray-100">
                     <label class="block text-sm font-bold text-gray-700 mb-2">主場球隊 (Team A)</label>
                     <select id="fb_league_a" class="w-full p-3 mb-2 bg-white border border-gray-300 rounded-xl text-sm focus:outline-none" onchange="updateFBTeams('a')"></select>
-                    <!-- 加上 onchange 呼叫 updateFBVenueOptions() -->
                     <select id="fb_team_a" class="w-full p-3 mb-3 bg-white border border-gray-300 rounded-xl text-sm font-bold focus:outline-none" onchange="updateFBVenueOptions()"></select>
                     <div class="flex justify-between items-center text-xs font-bold text-gray-500"><span>🤕 缺陣人數:</span><input type="number" id="fb_inj_a" min="0" value="0" class="w-12 p-1 border rounded text-center"></div>
                 </div>
                 <div class="mb-6 bg-gray-50 p-4 rounded-2xl border border-gray-100">
                     <label class="block text-sm font-bold text-gray-700 mb-2">客場球隊 (Team B)</label>
                     <select id="fb_league_b" class="w-full p-2 mb-2 bg-white border border-gray-300 rounded-xl text-sm focus:outline-none" onchange="updateFBTeams('b')"></select>
-                    <!-- 加上 onchange 呼叫 updateFBVenueOptions() -->
                     <select id="fb_team_b" class="w-full p-2 mb-3 bg-white border border-gray-300 rounded-xl text-sm font-bold focus:outline-none" onchange="updateFBVenueOptions()"></select>
                     <div class="flex justify-between items-center text-xs font-bold text-gray-500"><span>🤕 缺陣人數:</span><input type="number" id="fb_inj_b" min="0" value="0" class="w-12 p-1 border rounded text-center"></div>
                 </div>
                 <label class="block text-xs font-bold text-gray-400 mb-2 uppercase">🏟️ 場地優勢</label>
-                <!-- 場地選單內容將透過 JS 動態產生以符合選取的球隊名稱 -->
                 <select id="fb_venue" class="w-full p-4 bg-white border border-gray-200 rounded-2xl mb-6 text-sm font-bold focus:outline-none"></select>
 
                 <button id="fb_predict_btn" onclick="predictFB()" class="w-full bg-black text-white py-4 rounded-full font-bold shadow-lg hover:shadow-xl transition text-lg disabled:opacity-50">⚡ 執行預測</button>
